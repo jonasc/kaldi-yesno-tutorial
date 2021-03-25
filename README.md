@@ -99,6 +99,7 @@ Now, for each dataset (train, test), we need to generate following Kaldi input f
         * Since we have only one speaker in this example, let's use `global` as `speaker_id`
     * `<utt_id> <speaker_id>`
         * e.g. `0_0_1_0_1_0_1_1 global`
+    * Ensure that the file ends with a newline character, otherwise later stages might fail saying that the file is not correctly sorted by `speaker_id`.
 * `spk2utt`
     * Simply inverse-indexed `utt2spk` (`<speaker_id> <all_hier_utterences>`)
     * Instead of writing Python code to re-index utterances and speakers, you can also use a Kaldi utility to do it.
